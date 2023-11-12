@@ -48,7 +48,7 @@ export default function Featured({ content }) {
         <h1 className="capitalize text-gray-900 font-epilogue xl:text-6xl lg:text-5xl sm:text-4xl text-3xl lg:leading-[60px] font-semibold xl:leading-[72px]">
           {heading}
         </h1>
-        <p className="font-kumbh text-gray lg:text-xl md:text-lg sm:text-sm text-xs xl:my-12 sm:my-5 leading-8">
+        <p className="font-kumbh text-gray lg:text-xl md:text-lg text-sm xl:my-12 sm:my-5 leading-8">
           {description}
         </p>
         {listItems.map((item, index) => (
