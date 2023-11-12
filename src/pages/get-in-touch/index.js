@@ -53,15 +53,9 @@ export default function contact({ contact, sectionBanner }) {
 
       <div className="grid grid-cols-12 gap-4 w-full">
         <div className="col-start-1 col-span-12">
+          <Map />
           {contact.map((info) => (
-            <>
-              <Map
-                key={info.sys.id}
-                lat={info.fields.location.lat}
-                lng={info.fields.location.lon}
-              />
-              <Footer key={info.sys.id} content={info} />
-            </>
+            <Footer key={info.sys.id} content={info} />
           ))}
           <Copyright />
         </div>
