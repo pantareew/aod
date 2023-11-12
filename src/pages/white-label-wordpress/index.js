@@ -5,10 +5,9 @@ import {
   Featured,
   LogoBanner,
   Projects,
-  Mkt,
   Blog,
-  FAQ,
   UpToDate,
+  TopBanner,
   PreFooter,
   Footer,
   Copyright,
@@ -18,39 +17,35 @@ export async function getStaticProps() {
   const hero = await client.getEntries({ content_type: "hero" });
   const featured = await client.getEntries({ content_type: "featured" });
   const projects = await client.getEntries({ content_type: "projects" });
-  const mkt = await client.getEntries({ content_type: "mkt" });
+
   const blog = await client.getEntries({ content_type: "blog" });
-  const faq = await client.getEntries({ content_type: "faq" });
+
   const contact = await client.getEntries({ content_type: "contact" });
   return {
     props: {
       hero: hero.items,
       featured: featured.items,
       proj: projects.items,
-      mkt: mkt.items,
+
       blog: blog.items,
-      faq: faq.items,
       contact: contact.items,
     },
   };
 }
-export default function Home({
-  hero,
-  featured,
-  proj,
-  mkt,
-  blog,
-  faq,
-  contact,
-}) {
+export default function page({ hero, featured, proj, blog, contact }) {
   return (
-    <>
+    <div>
+      <div className="hidden xl:block ">
+        {contact.map((info) => (
+          <TopBanner key={info.sys.id} content={info} />
+        ))}
+      </div>
       <div className="w-full absolute z-10">
         <Navbar />
       </div>
       <div>
         {hero
-          .filter((element) => element.fields.kicker === "Alpha Omega Digital")
+          .filter((element) => element.fields.kicker === "agency specialists")
           .map((heroItem) => (
             <Hero key={heroItem.sys.id} content={heroItem} />
           ))}
@@ -60,7 +55,7 @@ export default function Home({
           {featured
             .filter(
               (featuredElements) =>
-                featuredElements.fields.kicker === "in a nutshell"
+                featuredElements.fields.kicker === "white label agency"
             )
             .map((featuredElements) => (
               <Featured
@@ -75,44 +70,28 @@ export default function Home({
           <LogoBanner />
         </div>
       </div>
-
       <div className=" grid grid-cols-12 gap-4 ">
         <div className="col-start-2 col-span-10">
-          <Projects content={proj} demo={true} />
+          <Projects content={proj} demo={false} />
         </div>
       </div>
       <div className=" grid grid-cols-12 gap-4 ">
-        <div className="col-start-1 col-span-12">
-          <Mkt content={mkt} />
-        </div>
-      </div>
-      <div className=" grid grid-cols-12 gap-4 ">
-        <div className="col-start-2 col-span-10">
+        <div className="col-start-2 col-span-10 my-10">
           <Blog content={blog} />
-        </div>
-        <div className="col-start-2 col-span-10 mb-20">
-          <h1 className=" text-gray-900 font-epilogue text-4xl sm:text-6xl font-semibold leading-[72px] my-0 sm:my-8">
-            FAQ's
-          </h1>
-          <FAQ content={faq} />
         </div>
       </div>
       <div className="grid grid-cols-12 gap-4 w-full">
         <div className="col-start-1 col-span-12">
           <UpToDate />
-          <div>
-            {contact.map((info) => (
-              <PreFooter key={info.sys.id} content={info} />
-            ))}
-          </div>
-          <div>
-            {contact.map((info) => (
-              <Footer key={info.sys.id} content={info} />
-            ))}
-          </div>
+          {contact.map((info) => (
+            <PreFooter key={info.sys.id} content={info} />
+          ))}
+          {contact.map((info) => (
+            <Footer key={info.sys.id} content={info} />
+          ))}
           <Copyright />
         </div>
       </div>
-    </>
+    </div>
   );
 }
