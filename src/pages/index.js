@@ -92,7 +92,7 @@ export default function Home({
         </div>
         <div className="col-start-2 col-span-10 mb-20">
           <h1 className=" text-gray-900 font-epilogue text-4xl sm:text-6xl font-semibold leading-[72px] my-0 sm:my-8">
-            FAQ's
+            FAQ&apos;s
           </h1>
           <FAQ content={faq} />
         </div>

@@ -80,7 +80,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function services({
+export default function Services({
   sectionBanner,
   contact,
   services,

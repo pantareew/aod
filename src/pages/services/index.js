@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function services() {
+export default function DefaultService() {
   useEffect(() => {
     defaultPage();
   }, []);
