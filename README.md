@@ -1,18 +1,19 @@
-## Alpha Omega Digital website
-# Description
+# Alpha Omega Digital website
+
+## Project Overview
+This project is a result of my internship at Alpha Omega Digital, a distinguished web design agency located in Melbourne. The primary goal was to reconstruct their official website based on a Figma prototype, bringing it to life with full functionality. Additionally, Contentful integration was implemented to enhance content management processes.
+
+## Key Responsibilities
+* Website Reconstruction: I worked on translating the provided Figma prototype into a responsive and visually appealing website, ensuring a seamless user experience across devices.
+* Content Management with Contentful: The project involved integrating Contentful, a headless CMS, to efficiently manage and update the site's content. This not only facilitated content organization but also allowed for easy updates without altering the website's structure.
+
+## Technologies
+* Contentful (Content Management System)
+* Next.js
+* Tailwind CSS
+* React
 
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
